@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
+import type { FC } from 'react';
 import { Section } from './Section/Section';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Notification } from './Notification/Notification';
 import { Statistics } from './Statistics/Statistics';
+import type { FeedbackType, FeedbackState } from '../types/feedback';
 import css from './App.module.css';
 
-const FEEDBACK_OPTIONS = ['good', 'neutral', 'bad'];
+const FEEDBACK_OPTIONS: FeedbackType[] = ['good', 'neutral', 'bad'];
 
-export const App = () => {
-  const [feedback, setFeedback] = useState({
+export const App: FC = () => {
+  const [feedback, setFeedback] = useState<FeedbackState>({
     good: 0,
     neutral: 0,
     bad: 0,
   });
 
-  const handleLeaveFeedback = option => {
+  const handleLeaveFeedback = (option: FeedbackType) => {
     setFeedback(prev => ({
       ...prev,
       [option]: prev[option] + 1,

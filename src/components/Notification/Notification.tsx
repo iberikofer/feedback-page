@@ -1,8 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import type { FC } from 'react';
 import css from './Notification.module.css';
 
-export const Notification = ({
+interface NotificationProps {
+  message?: string;
+  title?: string;
+}
+
+export const Notification: FC<NotificationProps> = ({
   message = 'There is no feedback yet',
   title = 'No Feedback Given',
 }) => {
@@ -15,11 +20,6 @@ export const Notification = ({
       <p className={css.message}>{message}</p>
     </div>
   );
-};
-
-Notification.propTypes = {
-  message: PropTypes.string,
-  title: PropTypes.string,
 };
 
 export default Notification;

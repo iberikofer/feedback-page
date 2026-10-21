@@ -1,8 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import type { FC } from 'react';
+import type { FeedbackType, FeedbackState } from '../../types/feedback';
 import css from './FeedbackOptions.module.css';
 
-const OPTION_CONFIG = {
+interface OptionConfig {
+  label: string;
+  emoji: string;
+  className: string;
+  ariaLabel: string;
+}
+
+const OPTION_CONFIG: Record<FeedbackType, OptionConfig> = {
   good: {
     label: 'Good',
     emoji: '👍',
@@ -23,7 +31,17 @@ const OPTION_CONFIG = {
   },
 };
 
-export const FeedbackOptions = ({ options, onLeaveFeedback, counts = {} }) => {
+interface FeedbackOptionsProps {
+  options: FeedbackType[];
+  onLeaveFeedback: (option: FeedbackType) => void;
+  counts?: Partial<FeedbackState>;
+}
+
+export const FeedbackOptions: FC<FeedbackOptionsProps> = ({
+  options,
+  onLeaveFeedback,
+  counts = {},
+}) => {
   return (
     <div className={css.container} role="group" aria-label="Feedback ratings">
       {options.map(option => {
@@ -55,12 +73,6 @@ export const FeedbackOptions = ({ options, onLeaveFeedback, counts = {} }) => {
       })}
     </div>
   );
-};
-
-FeedbackOptions.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-  onLeaveFeedback: PropTypes.func.isRequired,
-  counts: PropTypes.objectOf(PropTypes.number),
 };
 
 export default FeedbackOptions;

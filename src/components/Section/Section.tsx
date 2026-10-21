@@ -1,8 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import type { FC, ReactNode } from 'react';
 import css from './Section.module.css';
 
-export const Section = ({ title, children, className = '' }) => {
+interface SectionProps {
+  title: string;
+  children: ReactNode;
+  className?: string;
+}
+
+export const Section: FC<SectionProps> = ({ title, children, className = '' }) => {
   const sectionId = `section-${title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
 
   return (
@@ -16,12 +22,6 @@ export const Section = ({ title, children, className = '' }) => {
       {children}
     </section>
   );
-};
-
-Section.propTypes = {
-  title: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
 };
 
 export default Section;

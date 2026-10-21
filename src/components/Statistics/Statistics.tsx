@@ -1,8 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import type { FC } from 'react';
 import css from './Statistics.module.css';
 
-export const Statistics = ({
+interface StatisticsProps {
+  good: number;
+  neutral: number;
+  bad: number;
+  total: number;
+  positivePercentage: number;
+}
+
+interface MetricItem {
+  id: string;
+  label: string;
+  value: number;
+  icon: string;
+  className: string;
+}
+
+export const Statistics: FC<StatisticsProps> = ({
   good,
   neutral,
   bad,
@@ -26,7 +42,7 @@ export const Statistics = ({
     fillColor = 'var(--color-neutral)';
   }
 
-  const metrics = [
+  const metrics: MetricItem[] = [
     {
       id: 'good',
       label: 'Good',
@@ -76,8 +92,8 @@ export const Statistics = ({
           className={css.progressBarTrack}
           role="progressbar"
           aria-valuenow={percentage}
-          aria-valuemin="0"
-          aria-valuemax="100"
+          aria-valuemin={0}
+          aria-valuemax={100}
           aria-label="Positive feedback percentage"
         >
           <div
@@ -109,14 +125,6 @@ export const Statistics = ({
       </div>
     </div>
   );
-};
-
-Statistics.propTypes = {
-  good: PropTypes.number.isRequired,
-  neutral: PropTypes.number.isRequired,
-  bad: PropTypes.number.isRequired,
-  total: PropTypes.number.isRequired,
-  positivePercentage: PropTypes.number.isRequired,
 };
 
 export default Statistics;
