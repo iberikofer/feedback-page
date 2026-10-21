@@ -18,7 +18,7 @@
     "dashboard",
     "ui"
   ],
-  "homepage": "https://iberikofer.github.io/react-feedback-page/",
+  "homepage": "https://iberikofer.github.io/feedback-page/",
   "dependencies": {
     "prop-types": "^15.8.1",
     "react": "^18.3.1",

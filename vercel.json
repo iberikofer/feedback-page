@@ -1,6 +1,11 @@
-﻿{
+{
+  "buildCommand": "PUBLIC_URL=/ npm run build",
   "outputDirectory": "build",
   "rewrites": [
+    {
+      "source": "/feedback-page/(.*)",
+      "destination": "/$1"
+    },
     {
       "source": "/(.*)",
       "destination": "/index.html"

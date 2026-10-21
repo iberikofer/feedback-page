@@ -1,8 +1,8 @@
 # 💬 Feedback Hub
 
 <p align="center">
-  <a href="https://github.com/iberikofer/react-feedback-page/actions/workflows/deploy.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/iberikofer/react-feedback-page/deploy.yml?branch=main&style=flat-square&logo=githubactions&logoColor=white&label=Build%20%26%20Deploy" alt="Build and Deploy" />
+  <a href="https://github.com/iberikofer/feedback-page/actions/workflows/deploy.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/iberikofer/feedback-page/deploy.yml?branch=main&style=flat-square&logo=githubactions&logoColor=white&label=Build%20%26%20Deploy" alt="Build and Deploy" />
   </a>
   <a href="https://nodejs.org/">
     <img src="https://img.shields.io/badge/node-%3E%3D20.0.0-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node Version" />
@@ -10,7 +10,7 @@
   <a href="https://react.dev/">
     <img src="https://img.shields.io/badge/react-18.3.1-61dafb?style=flat-square&logo=react&logoColor=black" alt="React 18" />
   </a>
-  <a href="https://github.com/iberikofer/react-feedback-page/blob/main/LICENSE">
+  <a href="https://github.com/iberikofer/feedback-page/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="MIT License" />
   </a>
 </p>
@@ -65,8 +65,8 @@ Follow these steps to set up and run the project locally:
 ### 1. 📥 Clone the repository
 
 ```bash
-git clone https://github.com/iberikofer/react-feedback-page.git
-cd react-feedback-page
+git clone https://github.com/iberikofer/feedback-page.git
+cd feedback-page
 ```
 
 ### 2. 🔐 Configure Environment Variables
@@ -133,14 +133,14 @@ to React client code must begin with the `REACT_APP_` prefix.
 | :---------------------- | :---------: | :-------------------------------------------------- | :------------------------------------ |
 | `REACT_APP_TITLE`       |     No      | `Feedback Hub`                                      | Custom header and application name    |
 | `REACT_APP_DESCRIPTION` |     No      | `Interactive customer feedback rating...`           | Application description for meta tags |
-| `PUBLIC_URL`            |     No      | `https://iberikofer.github.io/react-feedback-page/` | Base deployment path on GitHub Pages  |
+| `PUBLIC_URL`            |     No      | `https://iberikofer.github.io/feedback-page/` | Base deployment path on GitHub Pages  |
 
 ---
 
 ## 📂 6. Project Structure
 
 ```text
-react-feedback-page/
+feedback-page/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml          # 🚀 GitHub Actions CI/CD deployment pipeline
@@ -192,5 +192,5 @@ Contributions, issues, and feature requests are welcome!
 ## 📜 8. License
 
 This project is licensed under the **MIT License** - see the
-[LICENSE](https://github.com/iberikofer/react-feedback-page/blob/main/LICENSE)
+[LICENSE](https://github.com/iberikofer/feedback-page/blob/main/LICENSE)
 file for details.
